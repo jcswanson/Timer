@@ -30,128 +30,154 @@ public class MyTimer extends JFrame {
     private Color stop = Color.decode("#D8315B");
     private Color blue = Color.decode("#B8C5D6");
     private Color crayon = Color.decode("#335C81");
-    private Color lime = Color.decode("#EDF67D");
+    private Color lime = Color.decode("#9E8FB2");
     private Color yellowlight = Color.decode("#FFE66D");
-   public MyTimer(){
-       initGUI();
-       setTitle("Timer");
-       setResizable(false);
-       this.pack();
-       setLocationRelativeTo(null);
-       setVisible(true);
-       setDefaultCloseOperation(EXIT_ON_CLOSE);
-       
-   }
-   private void initGUI(){
-       TitleLabel titleLabel = new TitleLabel("My Timer");
-       add(titleLabel, BorderLayout.PAGE_START);
-       JPanel centerPanel = new JPanel();
-       add(centerPanel, BorderLayout.CENTER);
-       centerPanel.add(timerPanel);
-       JPanel buttonPanel = new JPanel();
-       add(buttonPanel, BorderLayout.PAGE_END);
-       centerPanel.setBackground(lime);
- 
-       timerPanel.setBackground(lime);
-       buttonPanel.setBackground(Color.black);
-       
-       // Start button
-       JButton startButton = new JButton("Start");
-       startButton.addActionListener(new ActionListener(){
-           @Override
-           public void actionPerformed(ActionEvent e) {
-               start();
-           }
-       
-   });
-       buttonPanel.add(startButton);
-       
-       // Stop button
-       JButton stopButton = new JButton("Stop");
-       stopButton.addActionListener(new ActionListener(){
-           @Override
-           public void actionPerformed(ActionEvent e) {
-               stop();
-           }
-           
-       });
-       buttonPanel.add(stopButton);
-       
-       // Hour button
-       JButton hoursButton = new JButton("Hour");
-       hoursButton.addActionListener(new ActionListener(){
-           @Override
-           public void actionPerformed(ActionEvent e) {
-              addAnHour();
-           }
-           
-       });
-       buttonPanel.add(hoursButton);
-       
-       // Minutes button
-       JButton minutesButton = new JButton("Min");
-       minutesButton.addActionListener(new ActionListener(){
-           @Override
-           public void actionPerformed(ActionEvent e) {
-               addAMinute();
-           }
-           
-       });
-       buttonPanel.add(minutesButton);
-       
-       // Clear button
-       JButton clearButton = new JButton("Clear");
-       clearButton.addActionListener(new ActionListener(){
+    private Color purple = Color.decode("#3B3249");
+    public MyTimer() {                                   
+        initGUI();
+        setTitle("Timer");
+        setResizable(false);
+        this.pack();
+        setLocationRelativeTo(null);
+        setVisible(true);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-           @Override
-           public void actionPerformed(ActionEvent e) {
-               clear();
-           }
-       });
-       buttonPanel.add(clearButton);
-       
-       hoursButton.setBackground(blue);
-       minutesButton.setBackground(blue);
-       clearButton.setBackground(yellowlight);
-       stopButton.setBackground(stop);
-       startButton.setBackground(start);
-}
-   private void addAnHour(){
-       long time = timerPanel.getTime();
-       time += 3600;
-       timerPanel.setTime(time);
-   }
-   private void addAMinute(){
-       long time = timerPanel.getTime();
-       time += 60;
-       timerPanel.setTime(time);
-   }
-   private void clear(){
-       timerPanel.stop();
-       timerPanel.setTime(0);
-   }
-   
-   private void stop(){
-       timerPanel.stop();
-   }
-   private void start(){
-       timerPanel.start();
-   }
+    }
+
+    private void initGUI() {
+        TitleLabel titleLabel = new TitleLabel("My Timer");
+        add(titleLabel, BorderLayout.PAGE_START);
+        JPanel centerPanel = new JPanel();
+        add(centerPanel, BorderLayout.CENTER);
+        centerPanel.add(timerPanel);
+        JPanel buttonPanel = new JPanel();
+        add(buttonPanel, BorderLayout.PAGE_END);
+        centerPanel.setBackground(lime);
+        
+        timerPanel.setBackground(lime);
+        buttonPanel.setBackground(purple);
+
+        // Start button
+        JButton startButton = new JButton("Start");
+        startButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                start();
+            }
+
+        });
+        buttonPanel.add(startButton);
+
+        // Stop button
+        JButton stopButton = new JButton("Stop");
+        stopButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                stop();
+            }
+
+        });
+        buttonPanel.add(stopButton);
+
+        // Hour button
+        JButton hoursButton = new JButton("Hour");
+        hoursButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                addAnHour();
+            }
+
+        });
+        buttonPanel.add(hoursButton);
+
+        // Minutes button
+        JButton minutesButton = new JButton("Min");
+        minutesButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                addAMinute();
+            }
+
+        });
+        buttonPanel.add(minutesButton);
+
+        // Seconds Button
+        JButton secondsButton = new JButton("Sec");
+        secondsButton.addActionListener(new ActionListener() {
+            
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                addSeconds();
+            }
+
+        });
+        buttonPanel.add(secondsButton);
+        
+        // Clear button
+        JButton clearButton = new JButton("Clear");
+        clearButton.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                clear();
+            }
+        });
+        buttonPanel.add(clearButton);
+        
+        secondsButton.setBackground(blue);
+        hoursButton.setBackground(blue);
+        minutesButton.setBackground(blue);
+        clearButton.setBackground(yellowlight);
+        stopButton.setBackground(stop);
+        startButton.setBackground(start);
+
+    }
+
+    private void addAnHour() {
+        long time = timerPanel.getTime();
+        time += 3600;
+        timerPanel.setTime(time);
+    }
+
+    private void addAMinute() {
+        long time = timerPanel.getTime();
+        time += 60;
+        timerPanel.setTime(time);
+    }
+
+    private void addSeconds() {
+        long time = timerPanel.getTime();
+        time += 10;
+        timerPanel.setTime(time);
+    }
+
+    private void clear() {
+        timerPanel.stop();
+        timerPanel.setTime(0);
+    }
+
+    private void stop() {
+        timerPanel.stop();
+    }
+
+    private void start() {
+        timerPanel.start();
+    }
+
     public static void main(String[] args) {
-        try{
+        try {
             String className = UIManager.getCrossPlatformLookAndFeelClassName();
             UIManager.setLookAndFeel(className);
+        } catch (Exception e) {
+
         }
-        catch(Exception e){
-        
-        }
-        SwingUtilities.invokeLater(new Runnable(){
+        SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
                 new MyTimer();
             }
-            
+
         });
     }
-    
+
 }
