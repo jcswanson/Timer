@@ -45,6 +45,9 @@ public class TimerPanel extends JPanel implements Runnable {
 
     }
 
+    public TimerPanel() {
+    }
+
     public void run() {
         while (time > 0) {
             time -= 1;

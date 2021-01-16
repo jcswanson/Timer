@@ -30,9 +30,9 @@ public class MyTimer extends JFrame {
     private Color stop = Color.decode("#D8315B");
     private Color blue = Color.decode("#B8C5D6");
     private Color crayon = Color.decode("#335C81");
-    private Color lime = Color.decode("#9E8FB2");
+    private Color lime = Color.decode("#FDFFFC");
     private Color yellowlight = Color.decode("#FFE66D");
-    private Color purple = Color.decode("#3B3249");
+    private Color purple = Color.decode("#FDFFFC");
     public MyTimer() {                                   
         initGUI();
         setTitle("Timer");

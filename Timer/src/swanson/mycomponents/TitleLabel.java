@@ -17,9 +17,9 @@ public class TitleLabel extends JLabel {
     private static final long serialVersionUID = 1L;
 
     public TitleLabel(String title) {
-        Font font = new Font(Font.DIALOG_INPUT, Font.BOLD, 32);
-        Color purple = Color.decode("#3B3249");
-        Color lime = Color.decode("#9E8FB2");
+        Font font = new Font(Font.SANS_SERIF, Font.BOLD, 32);
+        Color purple = Color.decode("#3c0000");
+        Color lime = Color.decode("#FDFFFC");
         setFont(font);
         setBackground(purple);
         setForeground(lime);
