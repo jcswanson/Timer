@@ -1,2 +1,2 @@
-# FishingHoleRepo
-app that allows individuals to write a Journal and record locations for each fishing trip they take to the locations.  Also displays a Google Map view of the locations.
+# Timer for Games & Other Uses
+Time Java application built using Java and Swing for it's user interface. Built by following along in the book "Advanced Do-it-Yourself Java Games".
